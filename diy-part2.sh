@@ -108,7 +108,7 @@ popd
 
 #echo 'quectel'
 # ln -s ../../../quectel ./package/lean/
-# svn co https://github.com/hanxd/extd/trunk/quectel package/mine/quectel
+svn co https://github.com/hanxd/extd/trunk/quectel package/mine/quectel
 
 #echo '删除旧版argon,链接新版'
 # rm -rf ./package/lean/luci-theme-argon
