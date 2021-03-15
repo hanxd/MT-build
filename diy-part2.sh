@@ -21,7 +21,7 @@ sed -i 's/OpenWrt/GL.iNet/g' package/base-files/files/bin/config_generate
 
 #echo '修改wifi名称'
 # sed -i 's/OpenWrt/iNetHotspot/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
-sed -i 's/OpenWrt/iNetHotspot/g ; s/none/psk-mixed/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
+sed -i 's/OpenWrt/iNetHotspot/g ; s/none/psk2/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 sed -i '/^EOF/i \            \set wireless.default_radio${devidx}.key=567890321' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 # sed -i 's/$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF./$1$GzaZpWin$e5M.CJ2ooGgDXrbQWltbd0/g' package/lean/default-settings/files/zzz-default-settings
 
