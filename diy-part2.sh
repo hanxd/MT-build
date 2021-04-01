@@ -31,7 +31,7 @@ sed -i '/^EOF/i \            \set wireless.default_radio${devidx}.key=567890321'
 # git clone https://github.com/koshev-msk/luci-app-atinout.git package/mine/luci-app-atinout
 # git clone https://github.com/koshev-msk/luci-app-mmconfig.git package/mine/luci-app-mmconfig
 git clone https://github.com/koshev-msk/luci-app-modeminfo.git package/mine/luci-app-modeminfo
-git clone https://github.com/koshev-msk/luci-app-smstools3.git package/mine/luci-app-smstools3
+# git clone https://github.com/koshev-msk/luci-app-smstools3.git package/mine/luci-app-smstools3
 
 #echo 'DHCP'
 sed -i '/mwan/i uci set network.RNDIS=interface' package/lean/default-settings/files/zzz-default-settings
@@ -45,7 +45,6 @@ sed -i '/mwan/i uci set network.RNDISv6.reqprefix=auto' package/lean/default-set
 sed -i '/mwan/i uci commit network' package/lean/default-settings/files/zzz-default-settings
 sed -i "/mwan/i uci add_list firewall.@zone[1].network='RNDIS'" package/lean/default-settings/files/zzz-default-settings
 sed -i "/mwan/i uci add_list firewall.@zone[1].network='RNDISv6'" package/lean/default-settings/files/zzz-default-settings
-# sed -i "/mwan/i uci set firewall.@zone[1].network='wan wan6 RNDIS RNDISv6'" package/lean/default-settings/files/zzz-default-settings
 sed -i '/mwan/i uci commit firewall' package/lean/default-settings/files/zzz-default-settings
 
 # echo '修改banner'
@@ -93,33 +92,12 @@ popd
 #popd
 #=================================================
 
-#=================================================
-# banip
-#pushd feeds/packages/net
-#rm -rf banip
-#svn co https://github.com/openwrt/packages/trunk/net/banip
-#popd
-
-#pushd feeds/luci/applications
-#rm -rf luci-app-banip
-#svn co https://github.com/openwrt/luci/trunk/applications/luci-app-banip
-#popd
-#=================================================
-
 #echo 'quectel'
 # ln -s ../../../quectel ./package/lean/
 svn co https://github.com/hanxd/extd/trunk/quectel package/mine/quectel
 
-#echo '删除旧版argon,链接新版'
-# rm -rf ./package/lean/luci-theme-argon
-# ln -s ../../../luci-theme-argon ./package/lean/
-
 # 复杂的AdGuardHome的openwrt的luci界面
 # git clone https://github.com/rufengsuixing/luci-app-adguardhome.git package/mine/luci-app-adguardhome
-
-# DiskMan for LuCI (WIP)
-# git clone https://github.com/lisaac/luci-app-diskman.git package/mine/luci-app-diskman
-# mkdir -p package/mine/parted && cp -i package/mine/luci-app-diskman/Parted.Makefile package/mine/parted/Makefile
 
 # KPR plus+
 # git clone https://github.com/project-openwrt/luci-app-koolproxyR.git package/mine/luci-app-koolproxyR
@@ -133,13 +111,6 @@ git clone https://github.com/tty228/luci-app-serverchan.git package/mine/luci-ap
 # FileBrowser
 # git clone https://github.com/project-openwrt/FileBrowser.git package/mine/FileBrowser
 
-# 网易云音乐
-# git clone https://github.com/project-openwrt/luci-app-unblockneteasemusic.git package/mine/luci-app-unblockneteasemusic
-# 网易云音乐GoLang版本
-# git clone https://github.com/project-openwrt/luci-app-unblockneteasemusic-go.git package/mine/luci-app-unblockneteasemusic-go
-# 网易云音乐mini
-# git clone https://github.com/project-openwrt/luci-app-unblockneteasemusic-mini.git package/mine/luci-app-unblockneteasemusic-mini
-
 # disable usb3.0
 # git clone https://github.com/rufengsuixing/luci-app-usb3disable.git package/mine/luci-app-usb3disable
 
@@ -148,9 +119,3 @@ git clone https://github.com/tty228/luci-app-serverchan.git package/mine/luci-ap
 
 # Rclone-OpenWrt
 # git clone https://github.com/ElonH/Rclone-OpenWrt.git package/mine/Rclone-OpenWrt
-
-#luci-app-vssr
-# git clone https://github.com/jerrykuku/luci-app-vssr.git t package/mine/luci-app-vssr
-# 获取hello world和依赖
-# git clone https://github.com/jerrykuku/lua-maxminddb package/diy-packages/helloworld/lua-maxminddb
-# git clone https://github.com/jerrykuku/luci-app-vssr package/diy-packages/helloworld/luci-app-vssr
