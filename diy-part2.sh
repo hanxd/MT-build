@@ -67,7 +67,7 @@ sed -i '/mwan/i uci commit firewall' package/lean/default-settings/files/zzz-def
 # 清除旧版argon主题并拉取最新版
 pushd package/lean
 rm -rf luci-theme-argon
-git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon luci-theme-argon
+git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon luci-theme-argon-18.06
 git clone https://github.com/jerrykuku/luci-app-argon-config.git luci-app-argon-config
 popd
 #=================================================
